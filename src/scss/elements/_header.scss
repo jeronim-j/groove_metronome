@@ -1,0 +1,17 @@
+.logo-container {
+  .logo {
+    color: $accent-dark;
+    font-family: $font-logo;
+    font-size: 44px;
+    margin: 20px 40px 10px;
+    text-align: right;
+  }
+  .logo-underline {
+    margin: 0 20px;
+    display: block;
+    height: 8px;
+    background: linear-gradient(90deg, $accent-light 0%, $accent-dark 100%);
+    border: 1px solid $background-color;
+  }
+
+}
