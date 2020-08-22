@@ -1,6 +1,7 @@
 import React from 'react';
 import Metronome from "./Metronome";
 import Header from "./Header";
+import Footer from "./Footer";
 
 
 const App = () => {
@@ -8,6 +9,7 @@ const App = () => {
         <>
             <Header/>
             <Metronome/>
+            <Footer/>
         </>
     )
 }

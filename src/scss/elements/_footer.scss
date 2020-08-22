@@ -1,0 +1,30 @@
+.footer-underline {
+  display: block;
+  height: 8px;
+  background: linear-gradient(90deg, $accent-dark 0%, $accent-light 100%);
+  border: 1px solid $background-color;
+  margin: 0 20px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 20px;
+  font-size: 12px;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: $accent-light;
+
+  a {
+    color: $accent-dark;
+  }
+
+  .icon {
+    margin: 0 0 0 20px;
+    height: 30px;
+    width: 30px;
+    fill: $accent-light;
+  }
+  .icon:hover {
+    transform: scale(1.1);
+  }
+}

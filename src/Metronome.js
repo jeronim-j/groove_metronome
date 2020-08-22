@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import click1 from './assets/click1.wav';
 import click2 from './assets/click2.wav';
 
+
 class Metronome extends Component {
     constructor(props) {
         super(props);
@@ -54,7 +55,7 @@ class Metronome extends Component {
     };
 
     handleBpmChange = event => {
-        const bpm = event.target.value;
+        let bpm = event.target.value;
 
         if (this.state.playing) {
             clearInterval(this.timer);
@@ -69,13 +70,15 @@ class Metronome extends Component {
         }
     }
 
+
+
     render() {
         const {playing, bpm} = this.state;
 
         return (
             <div className="metronome">
+                <div className="bpm-value" onChange={this.handleBpmChange}>{bpm} BPM</div>
                 <div className="bpm-slider">
-                    <div className="bpm-value">{bpm} BPM</div>
                     <input type="range" min="60" max="300" value={bpm} onChange={this.handleBpmChange}/>
                 </div>
                 <button onClick={this.startStop}>{playing ? 'Stop' : 'Start'}</button>

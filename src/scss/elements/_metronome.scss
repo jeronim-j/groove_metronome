@@ -115,9 +115,21 @@ input[type=range]:focus::-ms-fill-upper {
   text-align: center;
   max-width: 375px;
   background: $background-color;
-  margin: 150px auto;
+  margin: auto;
   padding: 30px;
 
+}
+.bpm-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bpm-slider-icon {
+  fill: $accent-light;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin: 0 5px;
 }
 
 .bpm-value {

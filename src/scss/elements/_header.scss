@@ -1,5 +1,4 @@
-.logo-container {
-  .logo {
+ .logo {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -9,6 +8,7 @@
     margin: 20px 40px 10px;
     text-align: right;
   }
+
   .logo-underline {
     margin: 0 20px;
     display: block;
@@ -16,19 +16,21 @@
     background: linear-gradient(90deg, $accent-light 0%, $accent-dark 100%);
     border: 1px solid $background-color;
   }
+
   .logo-vinyl {
-    margin: 0 1px;
-    height: 44px;
-    width: 44px;
+    margin: 0 1px 2px;
+    height: 41px;
+    width: 41px;
     fill: $accent-dark;
+
     @keyframes spin {
       from {transform: rotate(-20deg)}
       to {transform: rotate(290deg)}
     }
+
     animation: spin;
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-timing-function: ease-in-out;
   }
-}
