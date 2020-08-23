@@ -139,7 +139,7 @@ input[type=range]:focus::-ms-fill-upper {
   color: $accent-light;
 }
 
-.metronome button {
+.metronome-button {
   font-family: $font-else;
   background: $background-color;
   padding: 5px 15px;
@@ -152,10 +152,10 @@ input[type=range]:focus::-ms-fill-upper {
   cursor: pointer;
 }
 
-.metronome button:hover {
+.metronome-button:hover {
   transform: scale(1.3);
 }
 
-.metronome button:focus {
+.metronome-button:focus {
   outline: none;
 }

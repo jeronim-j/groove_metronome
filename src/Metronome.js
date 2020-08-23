@@ -81,7 +81,7 @@ class Metronome extends Component {
                 <div className="bpm-slider">
                     <input type="range" min="60" max="300" value={bpm} onChange={this.handleBpmChange}/>
                 </div>
-                <button onClick={this.startStop}>{playing ? 'Stop' : 'Start'}</button>
+                <button className="metronome-button" onClick={this.startStop}>{playing ? 'Stop' : 'Start'}</button>
             </div>
         );
     }
