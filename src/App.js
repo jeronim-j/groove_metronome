@@ -14,8 +14,8 @@ const App = () => {
         <>
             <Header/>
             <Consent/>
-            {/*<Metronome/>*/}
-            {/*<HowManyBPM/>*/}
+            <Metronome/>
+            <HowManyBPM/>
             <Footer/>
         </>
     )
