@@ -1,11 +1,19 @@
 import React, {useState} from "react";
+import {Audio} from "./App";
+import * as Tone from "tone";
 
 
 const Consent = () => {
 
     const [showConsent, setShowConsent] = useState(true);
 
-    const hide = () => setShowConsent(false);
+    const hide = () => {
+        setShowConsent(false);
+        if (Audio.state === 'suspended') {
+            Audio.resume();
+            Tone.start();
+        }
+    }
 
 
 

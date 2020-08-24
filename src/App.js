@@ -5,8 +5,10 @@ import Footer from "./Footer";
 import HowManyBPM from "./HowManyBPM";
 import Consent from "./Constent";
 
+export const Audio  = new AudioContext();
 
 const App = () => {
+
 
 
     return (
