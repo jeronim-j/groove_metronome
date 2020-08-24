@@ -3,6 +3,7 @@ import Metronome from "./Metronome";
 import Header from "./Header";
 import Footer from "./Footer";
 import HowManyBPM from "./HowManyBPM";
+import Consent from "./Constent";
 
 
 const App = () => {
@@ -12,8 +13,9 @@ const App = () => {
     return (
         <>
             <Header/>
-            <Metronome/>
-            <HowManyBPM/>
+            <Consent/>
+            {/*<Metronome/>*/}
+            {/*<HowManyBPM/>*/}
             <Footer/>
         </>
     )

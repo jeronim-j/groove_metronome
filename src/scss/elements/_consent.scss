@@ -1,0 +1,42 @@
+.consent {
+  color: $background-color;
+  font-family: $font-else;
+  width: 300px;
+  height: 150px;
+  margin: 50px auto;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 3px solid $background-color;
+  border-radius: 40px;
+  background: radial-gradient(circle, rgba(252, 176, 69, 1) 0%, rgba(255, 101, 23, 1) 100%);
+
+  p {
+    text-align: center;
+    margin: 5px 0;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    input[type=checkbox] {
+      appearance: none;
+    }
+    span {
+      background-color: $background-color;
+      color: $accent-light;
+      margin-top: 10px;
+      padding: 5px;
+      border-radius: 15px;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+}
+
+
