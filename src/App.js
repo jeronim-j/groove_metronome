@@ -9,16 +9,18 @@ import Consent from "./Constent";
 const App = () => {
 
 
-
     return (
         <>
             <Header/>
-            <Consent/>
-            <Metronome/>
-            <HowManyBPM/>
+            <section className={"application"}>
+                <Consent/>
+                <Metronome/>
+                <HowManyBPM/>
+            </section>
             <Footer/>
         </>
     )
+
 }
 
 export default App;
