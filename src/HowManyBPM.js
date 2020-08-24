@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import * as Tone from "tone";
 
 const HowManyBPM = () => {
 
     let beatArray = [];
-    let bpm;
+    let [bpm, setBpm] = useState(0);
 
-    let setTime = () => {
 
+
+    setBpm = () => {
         Tone.Transport.start(0);
         let time = Tone.now();
         let beatTime = Tone.Transport.seconds;
@@ -25,24 +26,17 @@ const HowManyBPM = () => {
         let avg = total / beatArray.length;
         bpm =  60 / avg;
 
-
-        console.log(`audio ctx time: ` + time.toFixed(3));
+        console.log(`audio context time: ` + time.toFixed(3));
         console.log(`transport clock: ` + beatTime.toFixed(3));
-        console.log(`bpm: ` + bpm.toFixed(0));
+        console.log(`bpm: ` + bpm.toFixed(2));
         Tone.Transport.stop().start();
-
     }
-
-
-
-
-
     return (
         <div className="how-many-bpm">
-            <button className="metronome-button" onClick={setTime}>
+            <button className="metronome-button" onClick={setBpm()}>
                 Tap the beat!
             </button>
-            <div className="bpm-value">60BPM</div>
+            <div className="bpm-value">{bpm.toFixed(2)} BPM</div>
         </div>
     )
 }

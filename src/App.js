@@ -6,6 +6,9 @@ import HowManyBPM from "./HowManyBPM";
 
 
 const App = () => {
+
+
+
     return (
         <>
             <Header/>
