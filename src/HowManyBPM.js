@@ -9,26 +9,26 @@ const HowManyBPM = () => {
 
 
     const countBpm = () => {
+        Tone.start();
         Tone.Transport.start(0);
-        let time = Tone.now();
+
+
         let beatTime = Tone.Transport.seconds;
 
-        if (beatArray.length < 8) {
+        if (beatArray.length < 5) {
             beatArray.push(beatTime);
         } else {
-            beatArray = [];
-            beatArray.push(beatTime);
+            beatArray.shift();
         }
 
         let total = beatArray.reduce( function(acc, cur) {
             return acc + cur
         }, 0 )
-        let avg = total / beatArray.length;
-        bpm =  60 / avg;
+        let avg = (total - beatArray[0]) / (beatArray.length - 1);
+        if (beatArray.length > 3) {
+            bpm =  60 / avg;
+        }
 
-        console.log(`audio context time: ` + time.toFixed(3));
-        console.log(`transport clock: ` + beatTime.toFixed(3));
-        console.log(`bpm: ` + bpm.toFixed(2));
         Tone.Transport.stop().start();
         setBpm(bpm);
     }
