@@ -4,8 +4,8 @@
     align-items: center;
     color: $accent-dark;
     font-family: $font-logo;
-    font-size: 44px;
-    margin: 20px 40px 10px;
+    font-size: 52px;
+    margin: 10px 20px;
     text-align: right;
   }
 
@@ -19,8 +19,8 @@
 
   .logo-vinyl {
     margin: 0 1px 2px;
-    height: 41px;
-    width: 41px;
+    height: 48px;
+    width: 48px;
     fill: $accent-dark;
 
     @keyframes spin {

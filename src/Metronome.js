@@ -25,6 +25,7 @@ class Metronome extends Component {
         if (this.state.playing) {
             clearInterval(this.timer);
             pointer.style.left = "0%";
+            pointer.innerHTML = "1"
             this.setState({
                 playing: false
             });
@@ -95,11 +96,13 @@ class Metronome extends Component {
         return (
             <div className="metronome">
                 <div className="bpm-value" onChange={this.handleBpmChange}>{bpm} BPM</div>
-                <div className="bpm-slider">
-                    <input type="range" min="60" max="300" value={bpm} onChange={this.handleBpmChange}/>
-                </div>
+
+                <input className="bpm-slider" type="range" min="60" max="300" value={bpm}
+                       onChange={this.handleBpmChange}/>
                 <button className="metronome-button" onClick={this.startStop}>{playing ? 'Stop' : 'Start'}</button>
-                <div className="metronome-animation"><div className="metronome-animation-pointer" id="pointer" /></div>
+                <div className="metronome-animation">
+                    <div className="metronome-animation-pointer" id="pointer">1</div>
+                </div>
             </div>
         );
     }

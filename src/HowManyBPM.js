@@ -29,6 +29,7 @@ const HowManyBPM = () => {
             bpm =  60 / avg;
         }
 
+
         Tone.Transport.stop().start();
         setBpm(bpm);
     }
