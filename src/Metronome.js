@@ -13,15 +13,18 @@ class Metronome extends Component {
         this.state = {
             playing: false,
             count: 0,
-            bpm: 100,
+            bpm: 180,
             beatsPerMeasure: 4
         };
 
     }
 
     startStop = () => {
+        const pointer = document.querySelector("#pointer");
+
         if (this.state.playing) {
             clearInterval(this.timer);
+            pointer.style.left = "0%";
             this.setState({
                 playing: false
             });
@@ -42,11 +45,26 @@ class Metronome extends Component {
 
     playClick = () => {
         const {count, beatsPerMeasure} = this.state;
+        const pointer = document.querySelector("#pointer");
+
 
         if (count % beatsPerMeasure === 0) {
             this.click2.play();
+            pointer.style.left = "0%"
+            pointer.innerHTML = "1"
+        } else if (count % beatsPerMeasure === 3) {
+            this.click1.play();
+            pointer.style.left = "75%"
+            pointer.innerHTML = "4"
+        } else if (count % beatsPerMeasure === 2) {
+            this.click1.play();
+            pointer.style.left = "50%"
+            pointer.innerHTML = "3"
         } else {
             this.click1.play();
+            pointer.style.left = "25%"
+            pointer.innerHTML = "2"
+
         }
 
         this.setState(state => ({
@@ -71,7 +89,6 @@ class Metronome extends Component {
     }
 
 
-
     render() {
         const {playing, bpm} = this.state;
 
@@ -82,6 +99,7 @@ class Metronome extends Component {
                     <input type="range" min="60" max="300" value={bpm} onChange={this.handleBpmChange}/>
                 </div>
                 <button className="metronome-button" onClick={this.startStop}>{playing ? 'Stop' : 'Start'}</button>
+                <div className="metronome-animation"><div className="metronome-animation-pointer" id="pointer" /></div>
             </div>
         );
     }

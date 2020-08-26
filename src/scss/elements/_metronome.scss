@@ -4,13 +4,17 @@
   background: $background-color;
   margin: auto;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 input[type=range] {
   appearance: none;
   outline: none;
   cursor: pointer;
-  width: 100%;
+  width: 350px;
   &::-webkit-slider-thumb {
     appearance: none;
     height: 36px;
@@ -24,7 +28,7 @@ input[type=range] {
   &::-webkit-slider-runnable-track {
     height: 9px;
     box-shadow: 1px 1px 1px $background-color, 0 0 1px $background-color;
-    background: linear-gradient(90deg, $accent-light 0%, $accent-dark 100%);
+    background: linear-gradient(90deg, $accent-light 0%, $accent-dark 50%, $accent-light 100%);
     border: 0.2px solid $background-color;
 
   }
@@ -53,5 +57,23 @@ input[type=range] {
   }
   &:focus {
     outline: none;
+  }
+}
+
+.metronome-animation {
+  position: relative;
+  height: 10px;
+  width: 85%;
+  background: linear-gradient(90deg, $accent-dark 0%, $accent-light 50%, $accent-dark 100%);
+  border: 1px solid $background-color;
+  .metronome-animation-pointer {
+    height: 30px;
+    color: white;
+    width: 25%;
+    border: 1px solid $accent-light;
+    background-color: $background-color;
+    position: absolute;
+    top: 50%;
+    transform: translate(-0%, -50%);
   }
 }
